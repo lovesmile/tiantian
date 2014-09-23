@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ToolsSet</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_of_wifi">WiFi信息</string>
+    <string name="title_of_wifi_null">您还没有连接过WiFi</string>
+    <string name="export_to">导出到：</string>
+    <string name="import_from">从指定文件导入：</string>
+    <string name="replace_existing_contacts">替换已有联系人</string>
+    <string name="export_contacts_title">导出/导入联系人</string>
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="title_of_qrcode">二维码扫描/生成</string>
+</resources>

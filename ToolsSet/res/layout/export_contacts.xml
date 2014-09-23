@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bar_bg" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/btn_back" />
+
+        <TextView
+            android:id="@+id/export_contacts_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_back"
+            android:text="@string/export_contacts_title"
+            android:textColor="@color/white"
+            android:textSize="@dimen/titlebar_text_size" />
+
+        <ImageButton
+            android:id="@+id/ibtn_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_right_menu"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/ExportButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titlebar_hight"
+        android:layout_marginTop="15dp"
+        android:text="@string/export_to"
+        android:background="@drawable/btn_bg" />
+ 
+    <EditText
+        android:id="@+id/ImportFile"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="/sdcard/backup.vcf" >
+    </EditText>
+
+    <Button
+        android:id="@+id/ImportButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titlebar_hight"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/ExportButton"
+        android:text="@string/import_from" 
+        android:background="@drawable/btn_bg" />
+
+    <EditText
+        android:id="@+id/ExportFile"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="/sdcard/backup.vcf" >
+    </EditText>
+
+    <CheckBox
+        android:id="@+id/ReplaceOnImport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ImportButton"
+        android:text="@string/replace_existing_contacts"
+        android:textColor="@color/black" />
+
+</TableLayout>
