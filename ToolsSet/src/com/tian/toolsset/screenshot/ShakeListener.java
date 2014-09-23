@@ -32,8 +32,6 @@ public class ShakeListener implements SensorEventListener
     public ShakeListener(Context c)
     {
     	mContext = c;
-        // 获得监听对象
-        start();
     }
 
     // 开始

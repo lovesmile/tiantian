@@ -15,20 +15,27 @@ import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Environment;
-import android.util.Log;
-import android.view.Display;
+import android.os.Vibrator;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Toast;
 
 public class ScreenShot {
-	private static final String TAG = null;
+	private static final String TAG = "ScreenShot";
 	// 图片存储路径
 	public static String SAVE_PATH = getSDCardPath() + "/ScreenImages/";
 	// 文件
 	public static String filename;
-	public static boolean isNoPor = false;
+	private ShakeListener mShakeListener = null;
+	private Vibrator mVibrator;
+	private Context mContext;
+	private int action;
+	public ScreenShot(Context mContext,int action) {
+		super();
+		this.mShakeListener = new ShakeListener(mContext);
+		this.mVibrator = (Vibrator) mContext.getSystemService(Context.VIBRATOR_SERVICE);
+		this.mContext = mContext;
+		this.action = action;
+	}
 
 	private static Bitmap takeScreenShot(Activity activity) {
 
@@ -78,41 +85,28 @@ public class ScreenShot {
 		}
 	}
 
-	public static void shoot(Context context, final View view) {
-		filename = SAVE_PATH + System.currentTimeMillis() + ".png";
-		if (filename == null) {
-			return;
-		}
-		File file = new File(filename);
-		if (!file.getParentFile().exists()) {
-			file.getParentFile().mkdirs();
-		}
-		new Thread(new Runnable() {
+	/*
+	 * public static void shoot(Context context, final View view) { filename =
+	 * SAVE_PATH + System.currentTimeMillis() + ".png"; if (filename == null) {
+	 * return; } File file = new File(filename); if
+	 * (!file.getParentFile().exists()) { file.getParentFile().mkdirs(); } new
+	 * Thread(new Runnable() {
+	 * 
+	 * @Override public void run() {
+	 * ScreenShot.savePic(ScreenShot.takeScreenShot(view)); } }).start();
+	 * Toast.makeText(context, "截屏文件已保存至SDCard/ScreenImages/目录下",
+	 * Toast.LENGTH_LONG).show(); }
+	 * 
+	 * public static void shoot(Activity context) { filename = SAVE_PATH +
+	 * System.currentTimeMillis() + ".png"; if (filename == null) { return; }
+	 * File file = new File(filename); if (!file.getParentFile().exists()) {
+	 * file.getParentFile().mkdirs(); }
+	 * ScreenShot.savePic(ScreenShot.takeScreenShot(context));
+	 * Toast.makeText(context, "截屏文件已保存至SDCard/ScreenImages/目录下",
+	 * Toast.LENGTH_LONG).show(); }
+	 */
 
-			@Override
-			public void run() {
-				ScreenShot.savePic(ScreenShot.takeScreenShot(view));
-			}
-		}).start();
-		Toast.makeText(context, "截屏文件已保存至SDCard/ScreenImages/目录下",
-				Toast.LENGTH_LONG).show();
-	}
-
-	public static void shoot(Activity context) {
-		filename = SAVE_PATH + System.currentTimeMillis() + ".png";
-		if (filename == null) {
-			return;
-		}
-		File file = new File(filename);
-		if (!file.getParentFile().exists()) {
-			file.getParentFile().mkdirs();
-		}
-		ScreenShot.savePic(ScreenShot.takeScreenShot(context));
-		Toast.makeText(context, "截屏文件已保存至SDCard/ScreenImages/目录下",
-				Toast.LENGTH_LONG).show();
-	}
-
-	public static void shoot(Context context) {
+	public void shoot() {
 		filename = SAVE_PATH + System.currentTimeMillis() + ".png";
 		new Thread(new Runnable() {
 
@@ -128,9 +122,7 @@ public class ScreenShot {
 										process.getOutputStream(), 8192));
 						outputStream.println("screencap -p " + filename);
 						outputStream.flush();
-						isNoPor = true;
 					} catch (Exception e) {
-						isNoPor = false;
 					} finally {
 						if (outputStream != null) {
 							outputStream.close();
@@ -138,7 +130,6 @@ public class ScreenShot {
 					}
 					process.waitFor();
 				} catch (Exception e) {
-					isNoPor = false;
 				} finally {
 					if (process != null) {
 						process.destroy();
@@ -146,10 +137,6 @@ public class ScreenShot {
 				}
 			}
 		}).start();
-		if (isNoPor) {
-			Toast.makeText(context, "截屏文件已保存至SDCard/ScreenImages/目录下",
-					Toast.LENGTH_LONG).show();
-		}
 	}
 
 	/**
@@ -171,7 +158,7 @@ public class ScreenShot {
 	/**
 	 * 拼接图片
 	 */
-	private Bitmap add2Bitmap(List<Bitmap> list) {
+	private Bitmap addxBitmap(List<Bitmap> list) {
 		int width;
 		int height1;
 		int height2 = 0;

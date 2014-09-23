@@ -1,5 +1,7 @@
 package com.tian.toolsset.utils;
 
+import com.tian.toolsset.screenshot.ScreenShot;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -36,6 +38,12 @@ public class ToolsBroadcastReceiver extends BroadcastReceiver {
 				m_Camera.release();
 				m_Camera = null;
 			}
+		}else if(TextUtils.equals(ToolsConstants.START_SCREEN_SHOT_ONCE, action)){
+			new ScreenShot(context, 1).shoot();
+		}else if(TextUtils.equals(ToolsConstants.START_SCREEN_SHOT_MORE,action)){
+			
+		}else if(TextUtils.equals(ToolsConstants.START_SCREEN_SHOT_END, action)){
+			
 		}
 	}
 

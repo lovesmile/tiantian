@@ -8,6 +8,7 @@ import com.tian.toolsset.adapter.MenuItemAdapter;
 import com.tian.toolsset.contacts.ContactsActivity;
 import com.tian.toolsset.qrcode.QRCodeActivity;
 import com.tian.toolsset.screenshot.FloatsWindowView;
+import com.tian.toolsset.screenshot.ScreenShotActivity;
 import com.tian.toolsset.utils.MenuItem;
 import com.tian.toolsset.utils.ToolsBroadcastReceiver;
 import com.tian.toolsset.utils.ToolsConstants;
@@ -92,11 +93,10 @@ public class ToolsActivity extends Activity{
 			            .show();
 					 break;
 				case 2:
-//					Toast.makeText(getApplicationContext(), "摇动手机开始截屏", Toast.LENGTH_SHORT).show();
-//					intent = new Intent();
-//					intent.setAction(ToolsConstants.SHAKE_START_SCREEN_SHOT);
-//					startService(intent);
-					getWindowLayout();
+					intent = new Intent();
+					intent.setClass(ToolsActivity.this, ScreenShotActivity.class);
+					ToolsActivity.this.startActivity(intent);
+					overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
 					break;
 				case 3:
 					intent = new Intent();
