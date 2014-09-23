@@ -76,7 +76,7 @@ public class FloatsWindowView extends RelativeLayout implements View.OnTouchList
 	}
 
 	private void updatePostion(int x, int y){
-		mWindowMgrParams.type = 2003;
+		mWindowMgrParams.type = 2002;
 		mWindowMgrParams.format = 1;
 		mWindowMgrParams.flags = 40;
 		mWindowMgrParams.gravity = Gravity.LEFT | Gravity.BOTTOM ;
@@ -120,6 +120,7 @@ public class FloatsWindowView extends RelativeLayout implements View.OnTouchList
 			break;
 		case R.id.button2:
 			ScreenShot.shoot(mContext);
+			msParams();
 			break;
 		case R.id.button3:
 			mWindowMgr.removeView(view);

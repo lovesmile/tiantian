@@ -124,40 +124,41 @@ public final class R {
         public static final int translucent_background=0x7f02001c;
     }
     public static final class id {
-        public static final int ExportButton=0x7f080022;
-        public static final int ExportFile=0x7f080025;
-        public static final int ImportButton=0x7f080024;
-        public static final int ImportFile=0x7f080023;
-        public static final int ReplaceOnImport=0x7f080026;
-        public static final int WifiInfosView=0x7f08001d;
+        public static final int ExportButton=0x7f080024;
+        public static final int ExportFile=0x7f080027;
+        public static final int ImportButton=0x7f080026;
+        public static final int ImportFile=0x7f080025;
+        public static final int ReplaceOnImport=0x7f080028;
+        public static final int WifiInfosView=0x7f08001f;
         /**  Messages IDs 
          */
         public static final int auto_focus=0x7f080000;
         public static final int btn_add_qrcode=0x7f080015;
-        public static final int btn_cancel_scan=0x7f080020;
+        public static final int btn_cancel_scan=0x7f080022;
         public static final int btn_copy=0x7f080012;
         public static final int btn_scan_barcode=0x7f080013;
-        public static final int button1=0x7f080018;
-        public static final int button2=0x7f080019;
-        public static final int button3=0x7f08001a;
+        public static final int button1=0x7f08001a;
+        public static final int button2=0x7f08001c;
+        public static final int button3=0x7f08001d;
         public static final int decode=0x7f080001;
         public static final int decode_failed=0x7f080002;
         public static final int decode_succeeded=0x7f080003;
         public static final int encode_failed=0x7f080004;
         public static final int encode_succeeded=0x7f080005;
         public static final int et_qr_string=0x7f080014;
-        public static final int export_contacts_title=0x7f080021;
-        public static final int gv_menu=0x7f080028;
+        public static final int export_contacts_title=0x7f080023;
+        public static final int gv_menu=0x7f08002a;
         public static final int ibtn_right_menu=0x7f08000f;
-        public static final int item_text=0x7f08002c;
+        public static final int item_text=0x7f08002e;
         public static final int iv_back=0x7f08000d;
-        public static final int iv_logo=0x7f080027;
-        public static final int iv_menu_icon=0x7f080029;
+        public static final int iv_logo=0x7f080029;
+        public static final int iv_menu_icon=0x7f08002b;
         public static final int iv_qr_image=0x7f080016;
         public static final int iv_qr_result=0x7f080010;
         public static final int launch_product_query=0x7f080006;
-        public static final int ll_layout=0x7f08001b;
-        public static final int preview_view=0x7f08001e;
+        public static final int layout_more=0x7f08001b;
+        public static final int layout_once=0x7f080018;
+        public static final int preview_view=0x7f080020;
         public static final int qrcode_title=0x7f08000e;
         public static final int quit=0x7f080007;
         public static final int restart_preview=0x7f080008;
@@ -166,22 +167,22 @@ public final class R {
         public static final int rl_title=0x7f08000c;
         public static final int search_book_contents_failed=0x7f08000a;
         public static final int search_book_contents_succeeded=0x7f08000b;
-        public static final int tv_menu_msg=0x7f08002b;
-        public static final int tv_menu_title=0x7f08002a;
+        public static final int text1=0x7f080019;
+        public static final int tv_menu_msg=0x7f08002d;
+        public static final int tv_menu_title=0x7f08002c;
         public static final int tv_scan_result=0x7f080011;
-        public static final int viewfinder_view=0x7f08001f;
-        public static final int wifi_title=0x7f08001c;
+        public static final int viewfinder_view=0x7f080021;
+        public static final int wifi_title=0x7f08001e;
     }
     public static final class layout {
         public static final int activity_qrcode=0x7f030000;
         public static final int activity_shot=0x7f030001;
-        public static final int activity_transparent=0x7f030002;
-        public static final int activity_wifi_info=0x7f030003;
-        public static final int camera=0x7f030004;
-        public static final int export_contacts=0x7f030005;
-        public static final int main=0x7f030006;
-        public static final int menu_item=0x7f030007;
-        public static final int wifi_item=0x7f030008;
+        public static final int activity_wifi_info=0x7f030002;
+        public static final int camera=0x7f030003;
+        public static final int export_contacts=0x7f030004;
+        public static final int main=0x7f030005;
+        public static final int menu_item=0x7f030006;
+        public static final int wifi_item=0x7f030007;
     }
     public static final class raw {
         public static final int beep=0x7f050000;
@@ -197,7 +198,10 @@ public final class R {
         public static final int navigation_drawer_open=0x7f090004;
         public static final int replace_existing_contacts=0x7f09000c;
         public static final int scan_text=0x7f09000e;
+        public static final int screenshot_more=0x7f090012;
+        public static final int screenshot_once=0x7f090011;
         public static final int title_of_qrcode=0x7f09000f;
+        public static final int title_of_screenshot=0x7f090010;
         public static final int title_of_wifi=0x7f090008;
         public static final int title_of_wifi_null=0x7f090009;
         public static final int title_section1=0x7f090001;

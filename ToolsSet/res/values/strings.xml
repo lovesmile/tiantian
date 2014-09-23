@@ -17,4 +17,8 @@
     <string name="export_contacts_title">导出/导入联系人</string>
     <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
     <string name="title_of_qrcode">二维码扫描/生成</string>
+    <string name="title_of_screenshot">截屏</string>
+    <string name="screenshot_once">点击单屏截图后，可以切换到任意界面，摇动手机截取图片，点击结束按钮停止截图，所有图片单独保存。</string>
+    <string name="screenshot_more">点击连续截图后，可以切换到任意界面，摇动手机截取图片，点击结束按钮停止截图，所有截图会以一张纵向长图的方式保存。（限制最多连续截图10次）</string>
+
 </resources>

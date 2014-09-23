@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
@@ -28,6 +29,7 @@ public class ScreenShot {
 	// 文件
 	public static String filename;
 	public static boolean isNoPor = false;
+
 	private static Bitmap takeScreenShot(Activity activity) {
 
 		// View是你需要截图的View
@@ -126,9 +128,9 @@ public class ScreenShot {
 										process.getOutputStream(), 8192));
 						outputStream.println("screencap -p " + filename);
 						outputStream.flush();
-						isNoPor =true;
+						isNoPor = true;
 					} catch (Exception e) {
-						isNoPor =false;
+						isNoPor = false;
 					} finally {
 						if (outputStream != null) {
 							outputStream.close();
@@ -136,7 +138,7 @@ public class ScreenShot {
 					}
 					process.waitFor();
 				} catch (Exception e) {
-					isNoPor =false;
+					isNoPor = false;
 				} finally {
 					if (process != null) {
 						process.destroy();
@@ -144,7 +146,7 @@ public class ScreenShot {
 				}
 			}
 		}).start();
-		if(isNoPor){
+		if (isNoPor) {
 			Toast.makeText(context, "截屏文件已保存至SDCard/ScreenImages/目录下",
 					Toast.LENGTH_LONG).show();
 		}
@@ -164,5 +166,23 @@ public class ScreenShot {
 			sdcardDir = Environment.getExternalStorageDirectory();
 		}
 		return sdcardDir.toString();
+	}
+
+	/**
+	 * 拼接图片
+	 */
+	private Bitmap add2Bitmap(List<Bitmap> list) {
+		int width;
+		int height1;
+		int height2 = 0;
+		width = list.get(0).getWidth();
+        height1 = list.get(0).getHeight()*list.size();
+		Bitmap result = Bitmap.createBitmap(width, height1, Config.ARGB_8888);
+		Canvas canvas = new Canvas(result);
+		for(Bitmap bitmap:list){
+			canvas.drawBitmap(bitmap, 0, height2, null);
+			height2 += bitmap.getHeight();
+		}
+		return result;
 	}
 }

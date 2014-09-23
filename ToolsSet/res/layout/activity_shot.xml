@@ -1,31 +1,102 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rl_layout"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:alpha="20">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bar_bg" >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:src="@drawable/btn_back" />
+
+        <TextView
+            android:id="@+id/qrcode_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_back"
+            android:text="@string/title_of_screenshot"
+            android:textColor="@color/white"
+            android:textSize="@dimen/titlebar_text_size" />
+
+        <ImageButton
+            android:id="@+id/ibtn_right_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_right_menu"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_once"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_title"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/screenshot_once"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_info_size" />
+
         <Button
             android:id="@+id/button1"
-            android:layout_width="80dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_alignParentRight="true"
             android:background="@drawable/btn_bg"
-            android:text="拖动"/>
+            android:text="单屏截图"
+            android:textSize="@dimen/text_btn_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_once"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/screenshot_more"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_info_size" />
+
         <Button
             android:id="@+id/button2"
-            android:layout_width="80dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_alignParentRight="true"
             android:background="@drawable/btn_bg"
-            android:layout_below="@+id/button1"
-            android:text="截图"/>
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/btn_bg"
-            android:layout_below="@+id/button2"
-            android:text="结束"/>
-    
+            android:text="单屏截图"
+            android:textSize="@dimen/text_btn_size" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/btn_bg"
+        android:layout_below="@+id/layout_more"
+        android:layout_marginTop="20dp"
+        android:text="结束截图"
+        android:textSize="@dimen/text_btn_size" />
+
 </RelativeLayout>
