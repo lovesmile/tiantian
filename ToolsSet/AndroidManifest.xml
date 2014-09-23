@@ -22,8 +22,8 @@
 
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    <uses-permission android:name="android.permission.GET_TASKS" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:allowBackup="true"
@@ -58,7 +58,11 @@
             android:name=".qrcode.CaptureActivity"
             android:screenOrientation="portrait" >
         </activity>
-
+        <activity
+            android:name=".screenshot.ScreenShotActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!--
         <service
             android:name=".screenshot.ScreenShotService"
             android:enabled="true" >
@@ -66,6 +70,6 @@
                 <action android:name="com.tian.service.ScreenShotService" />
             </intent-filter>
         </service>
+        -->
     </application>
-
 </manifest>

@@ -7,6 +7,7 @@ import java.util.List;
 import com.tian.toolsset.adapter.MenuItemAdapter;
 import com.tian.toolsset.contacts.ContactsActivity;
 import com.tian.toolsset.qrcode.QRCodeActivity;
+import com.tian.toolsset.screenshot.FloatsWindowView;
 import com.tian.toolsset.utils.MenuItem;
 import com.tian.toolsset.utils.ToolsBroadcastReceiver;
 import com.tian.toolsset.utils.ToolsConstants;
@@ -14,11 +15,15 @@ import com.tian.toolsset.wifi.WifiInfoActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
@@ -29,6 +34,9 @@ public class ToolsActivity extends Activity{
 	private ToolsBroadcastReceiver mMyBroadcastReceiver = new ToolsBroadcastReceiver();
 	private Intent intent;
 	private boolean isLightOn = false;
+	private static WindowManager mWindowMgr = null;
+	private WindowManager.LayoutParams mWindowMgrParams = null;
+	private static FloatsWindowView mFloatsWindowView = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -84,10 +92,11 @@ public class ToolsActivity extends Activity{
 			            .show();
 					 break;
 				case 2:
-					Toast.makeText(getApplicationContext(), "摇动手机开始截屏", Toast.LENGTH_SHORT).show();
-					intent = new Intent();
-					intent.setAction(ToolsConstants.SHAKE_START_SCREEN_SHOT);
-					startService(intent);
+//					Toast.makeText(getApplicationContext(), "摇动手机开始截屏", Toast.LENGTH_SHORT).show();
+//					intent = new Intent();
+//					intent.setAction(ToolsConstants.SHAKE_START_SCREEN_SHOT);
+//					startService(intent);
+					getWindowLayout();
 					break;
 				case 3:
 					intent = new Intent();
@@ -132,5 +141,36 @@ public class ToolsActivity extends Activity{
 	        }
 	        super.onDestroy();
 	    }
+	 private void initParams(){
+			DisplayMetrics dm = getResources().getDisplayMetrics();
+			mWindowMgrParams.x = dm.widthPixels - 150;
+			mWindowMgrParams.y = 300;
+			mWindowMgrParams.width = 300;
+			mWindowMgrParams.height = 400;
+		}
 
+		private void getWindowLayout(){
+			if(mFloatsWindowView == null){
+				mWindowMgr = (WindowManager)getBaseContext().getSystemService(Context.WINDOW_SERVICE);
+				mWindowMgrParams = new WindowManager.LayoutParams();
+				
+				/*
+				 *  2003 在指悬浮在所有界面之上
+				 *  (4.0+系统中，在下拉菜单下面，而在2.3中，在上拉菜单之上)
+				 */
+				mWindowMgrParams.type = 2003;
+				mWindowMgrParams.format = 1;
+				
+				/*
+		         * 代码实际是wmParams.flags |= FLAG_NOT_FOCUSABLE;
+		         * 40的由来是wmParams的默认属性（32）+ FLAG_NOT_FOCUSABLE（8）
+		         */
+				mWindowMgrParams.flags = 40;
+				mWindowMgrParams.gravity = Gravity.LEFT | Gravity.BOTTOM;
+				initParams();
+				
+				mFloatsWindowView = new FloatsWindowView(this);
+				mWindowMgr.addView(mFloatsWindowView, mWindowMgrParams);
+			}
+		}
 }
