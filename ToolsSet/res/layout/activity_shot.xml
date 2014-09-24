@@ -21,7 +21,7 @@
             android:src="@drawable/btn_back" />
 
         <TextView
-            android:id="@+id/qrcode_title"
+            android:id="@+id/shot_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -45,15 +45,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rl_title"
         android:layout_marginTop="20dp"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" >
 
         <TextView
             android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/screenshot_once"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_info_size" />
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/text_info_size_b" />
 
         <Button
             android:id="@+id/button1"
@@ -61,6 +63,7 @@
             android:layout_height="40dp"
             android:background="@drawable/btn_bg"
             android:text="单屏截图"
+            android:layout_marginTop="10dp"
             android:textSize="@dimen/text_btn_size" />
     </LinearLayout>
 
@@ -70,22 +73,25 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_once"
         android:layout_marginTop="20dp"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <TextView
-            android:id="@+id/text1"
+            android:id="@+id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/screenshot_more"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_info_size" />
+            android:textColor="@color/text_blue"
+            android:textSize="@dimen/text_info_size_b" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/btn_bg"
-            android:text="单屏截图"
+            android:text="连续截图"
+            android:layout_marginTop="10dp"
             android:textSize="@dimen/text_btn_size" />
     </LinearLayout>
 
@@ -93,9 +99,11 @@
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="@drawable/btn_bg"
         android:layout_below="@+id/layout_more"
         android:layout_marginTop="20dp"
+        android:background="@drawable/btn_bg"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:text="结束截图"
         android:textSize="@dimen/text_btn_size" />
 

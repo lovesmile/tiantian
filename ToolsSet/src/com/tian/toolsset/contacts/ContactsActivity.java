@@ -114,11 +114,8 @@ public class ContactsActivity extends Activity implements OnClickListener {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		progressDlg.cancel();
-		Intent it = new Intent();
-		it.setClass(ContactsActivity.this, ToolsActivity.class);
-		startActivity(it);
-		overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
 		super.onBackPressed();
+		overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
 	}
 	 /**
 	    * 接受消息,处理消息 ,此Handler会与当前主线程一块运行

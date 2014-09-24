@@ -5,7 +5,6 @@ import java.util.List;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,7 +18,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.tian.toolsset.R;
-import com.tian.toolsset.ToolsActivity;
 
 
 public class WifiInfoActivity extends Activity implements OnClickListener {
@@ -144,7 +142,6 @@ public class WifiInfoActivity extends Activity implements OnClickListener {
 		switch(v.getId()){
 		case R.id.iv_back:
 			onBackPressed();
-			
 			break;
 		}
 	}
@@ -152,11 +149,8 @@ public class WifiInfoActivity extends Activity implements OnClickListener {
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		Intent it = new Intent();
-		it.setClass(WifiInfoActivity.this, ToolsActivity.class);
-		startActivity(it);
-		overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
 		super.onBackPressed();
+		overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
 	}
 	
 }

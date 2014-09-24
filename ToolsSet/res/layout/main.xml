@@ -32,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:background="@drawable/btn_right_menu" />
+            android:background="@drawable/btn_right_menu"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <GridView

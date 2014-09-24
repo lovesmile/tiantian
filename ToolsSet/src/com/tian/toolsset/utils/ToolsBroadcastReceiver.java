@@ -12,11 +12,12 @@ import android.text.TextUtils;
 
 public class ToolsBroadcastReceiver extends BroadcastReceiver {
 	private Camera m_Camera;
-
+    private ScreenShot screenShot;
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
 		String action = intent.getAction();
+		screenShot = new ScreenShot(context);
 		if (TextUtils.equals(ToolsConstants.START_LIGHT_ACTION, action)) {
 			PackageManager pm = context.getPackageManager();
 			FeatureInfo[] features = pm.getSystemAvailableFeatures();
@@ -39,12 +40,11 @@ public class ToolsBroadcastReceiver extends BroadcastReceiver {
 				m_Camera = null;
 			}
 		}else if(TextUtils.equals(ToolsConstants.START_SCREEN_SHOT_ONCE, action)){
-			new ScreenShot(context, 1).shoot();
+			screenShot.shakeShot(1);
 		}else if(TextUtils.equals(ToolsConstants.START_SCREEN_SHOT_MORE,action)){
-			
+			screenShot.shakeShot(2);
 		}else if(TextUtils.equals(ToolsConstants.START_SCREEN_SHOT_END, action)){
-			
+			screenShot.stopShot();
 		}
 	}
-
 }

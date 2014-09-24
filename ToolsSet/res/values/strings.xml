@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ToolsSet</string>
+    <string name="app_name">常用工具</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
@@ -19,6 +19,6 @@
     <string name="title_of_qrcode">二维码扫描/生成</string>
     <string name="title_of_screenshot">截屏</string>
     <string name="screenshot_once">点击单屏截图后，可以切换到任意界面，摇动手机截取图片，点击结束按钮停止截图，所有图片单独保存。</string>
-    <string name="screenshot_more">点击连续截图后，可以切换到任意界面，摇动手机截取图片，点击结束按钮停止截图，所有截图会以一张纵向长图的方式保存。（限制最多连续截图10次）</string>
-
+    <string name="screenshot_more">点击连续截图后，可以切换到任意界面，摇动手机截取图片，点击结束按钮停止截图，所有截图会以一张纵向长图的方式保存。（限制最多连续截图15次）</string>
+    <string name="stop_shot">停止截屏</string>
 </resources>

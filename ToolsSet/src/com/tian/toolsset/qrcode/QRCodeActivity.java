@@ -2,11 +2,9 @@ package com.tian.toolsset.qrcode;
 
 import com.google.zxing.WriterException;
 import com.tian.toolsset.R;
-import com.tian.toolsset.ToolsActivity;
 import com.zxing.encoding.EncodingHandler;
 
 import android.app.Activity;
-import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -118,10 +116,7 @@ public class QRCodeActivity extends Activity implements OnClickListener {
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		Intent it = new Intent();
-		it.setClass(QRCodeActivity.this, ToolsActivity.class);
-		startActivity(it);
-		overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
 		super.onBackPressed();
+		overridePendingTransition(R.anim.in_from_left, R.anim.out_to_right);
 	}
 }

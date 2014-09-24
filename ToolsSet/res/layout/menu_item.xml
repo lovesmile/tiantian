@@ -17,13 +17,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_info_size_s" />
 
     <TextView
         android:id="@+id/tv_menu_msg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textSize="12sp" />
+        android:textSize="@dimen/text_info_size_s"
+        android:textColor="@color/text_blue" />
 
 </LinearLayout>

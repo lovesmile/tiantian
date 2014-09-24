@@ -28,6 +28,7 @@ public class ShakeListener implements SensorEventListener
     // 上次检测时间
     private long lastUpdateTime;
     private Context mContext;
+    public boolean isStart =false;
     // 构造器
     public ShakeListener(Context c)
     {
@@ -48,6 +49,7 @@ public class ShakeListener implements SensorEventListener
         if (sensor != null)
         {
             sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
+            isStart = true;
         }
 
     }
@@ -56,6 +58,7 @@ public class ShakeListener implements SensorEventListener
     public void stop()
     {
         sensorManager.unregisterListener(this);
+        isStart =false;
     }
 
     // 设置重力感应监听器
