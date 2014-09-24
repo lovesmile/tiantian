@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:background="@drawable/g_ls_index_bg" >
+
+            <TextView
+                android:id="@+id/cityname"
+                android:layout_width="fill_parent"
+                android:layout_height="30dip"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dip"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/weather_time"
+                android:layout_width="fill_parent"
+                android:layout_height="24dip"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dip"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:id="@+id/weatherTab"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!--
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/datetext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2012年02月22日"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <DigitalClock
+                    android:id="@+id/digitalClock1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+                -->
+
+
+                <!--
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent" >
+            </LinearLayout>
+                -->
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@drawable/g_ls_index_bg"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/today_weather_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="3"
+                        android:paddingLeft="10dip"
+                        android:textColor="@color/black"
+                        android:textSize="12sp" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center" >
+
+                        <ImageView
+                            android:id="@+id/today_weather_img1"
+                            android:layout_width="100dip"
+                            android:layout_height="100dip"
+                            android:scaleType="fitXY" />
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="fill_parent"
+                            android:gravity="center"
+                            android:text="~"
+                            android:textColor="@color/black"
+                            android:textSize="30sp" />
+
+                        <ImageView
+                            android:id="@+id/today_weather_img2"
+                            android:layout_width="100dip"
+                            android:layout_height="100dip"
+                            android:scaleType="fitXY" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/today_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/g_ls_index_bg"
+                android:gravity="center_vertical"
+                android:lines="5"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dip"
+                android:background="@drawable/g_ls_index_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/after_one_text"
+                    android:layout_width="120dip"
+                    android:layout_height="80dip"
+                    android:paddingLeft="15dip"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/after_one_img1"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="~"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/after_one_img2"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dip"
+                android:background="@drawable/g_ls_index_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/after_two_text"
+                    android:layout_width="120dip"
+                    android:layout_height="80dip"
+                    android:paddingLeft="15dip"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/after_two_img1"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="~"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/after_two_img2"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dip"
+                android:background="@drawable/g_ls_index_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/after_three_text"
+                    android:layout_width="120dip"
+                    android:layout_height="80dip"
+                    android:paddingLeft="15dip"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/after_three_img1"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="~"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/after_three_img2"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="100dip"
+                android:background="@drawable/g_ls_index_bg"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/after_four_text"
+                    android:layout_width="120dip"
+                    android:layout_height="80dip"
+                    android:paddingLeft="15dip"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/after_four_img1"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:scaleType="fitXY" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="~"
+                    android:textColor="@color/black"
+                    android:textSize="30sp" />
+
+                <ImageView
+                    android:id="@+id/after_four_img2"
+                    android:layout_width="80dip"
+                    android:layout_height="80dip"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout>

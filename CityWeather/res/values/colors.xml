@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="simiple_button_color">#FFF</color>
+    <color name="link_color">#FF0066CC</color>
+    <color name="darkgray">#404040ff</color>
+    <color name="black">#000000</color>
+    <color name="red">#ff7070</color>
+    <color name="green">#7CFC00</color>
+    <color name="lightgray">#c0c0c0ff</color>
+    <color name="white">#ffffffff</color>
+    <color name="yellow">#ffFF33ff</color>
+    <color name="blue">#00ffff</color>
+    <color name="gray">#898989</color>
+    <color name="divid_gray">#cccccc</color>
+    <color name="litlegray">#595959</color>
+    <color name="magenta">#ff6699ff</color>
+    <color name="cyan">#66ffffff</color>
+    <color name="mycolor1">#9fa0a0</color>
+    <color name="mycolor2">#898989</color>
+    <color name="color_9000">#9000</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorwhite">#FFFFFFFF</color>
+    <color name="colorgray">#656666</color>
+    <color name="catalog">#727171</color>
+    <color name="exit_menu">#eee</color>
+    <color name="confirming">#33b5e5</color>
+    <color name="gold">#b89766</color>
+    <color name="lavender">#fff0f5</color>
+    <color name="offline">#64646496</color>
+    <color name="light_black">#a8a8a8</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+
+
+	<color name="text_black">#ff000000</color><!-- 黑色（#000000   不透明度:100%） -->
+	<color name="text_title">#ff000000</color><!-- 黑色（#000000   不透明度:100%） -->
+	<color name="text_white">#ffffffff</color><!-- 白色（#ffffff 不透明度:100%） -->
+	<color name="text_gray">#80000000</color><!-- 灰色（#000000  不透明度:50%） -->
+	<color name="text_blue">#ff0079ff</color><!-- 蓝色（#007aff 不透明度:100%） -->
+    <color name="text_red">#ffff0000</color><!-- 红色（#ff0000 不透明度:100%） -->
+    <drawable name="translucent_background">#e0000000</drawable>
+    
+    
+    <color name="account_inactive">#FF646464</color>
+    <color name="account_unregistered">#FFFFC200</color>
+    <color name="account_valid">#FF84E300</color>
+    <color name="account_error">#FFFF0F00</color>
+</resources>

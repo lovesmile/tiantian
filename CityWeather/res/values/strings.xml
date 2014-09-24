@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_search">搜索</string>
+    <string name="action_plus">功能</string>
+    <string name="re_get_city_button">重新获取城市</string>
+    <string name="set_default_city">设置默认城市</string>
+    <string name="action_card">我的银行卡</string>
+    <string name="action_location">定位</string>
+    <string name="action_about">关于</string>
+    <string name="plus_group_chat">发起群聊</string>
+    <string name="plus_add_friend">添加朋友</string>
+    <string name="plus_video_chat">视频聊天</string>
+    <string name="plus_scan">扫一扫</string>
+    <string name="plus_take_photo">拍照分享</string>
+    <string name="share">分享</string>
+    
+    <string name="hello">Hello World, ChinaCityActivity!</string>
+    <string name="app_name">简单天气</string>
+    <string name="start_to_get_city">开始获取城市</string>
+    <string name="re_get_city">重新获取城市</string>
+    <string name="search_hint">输入你要查询的城市</string>
+    <string name="downloading_citys">正在下载城市...</string>
+    <string name="start_download">正在下载</string>
+    <string name="download_success">获取城市成功</string>
+    <string name="download_failed">获取城市失败</string>
+    <string name="refresh_time">更新时间</string>
+    <string name="get_weather">刷新天气</string>
+    <string name="refreshing_weather">开始获取天气...</string>
+    <string name="get_weather_success">获取天气成功</string>
+    <string name="alert_download_failure">网络连接错误，获取失败</string>
+    <string name="now_weather">天气实况</string>
+    <string name="about">本应用是一款简单的天气查询应用，所有天气数据是从中国天气网免费获取（http://webservice.webxml.com.cn）。网站维护时，天气获取会失败，维护结束即可恢复。
+        支持查询，定位，或直接从城市列表选择城市查看天气，并可以点击天气实况分享给他人（例如：您可以查询其他城 市的天气，并短信分享给异地的他/她），功能简单实用。对于已经查询过的城市，会在
+        本地缓存天气数据，可在天气页下拉刷新。</string>
+
+</resources>

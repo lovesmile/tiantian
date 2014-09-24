@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.wechatsample.MainActivity" >
+
+    <item
+        android:id="@+id/action_search"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/actionbar_search_icon"
+        android:showAsAction="ifRoom|collapseActionView"
+        android:title="@string/action_search"/>
+    <item
+        android:id="@+id/re_get_city_button"
+        android:icon="@drawable/refresh"
+        android:title="@string/re_get_city_button"/>
+    <item
+        android:id="@+id/set_default_city"
+        android:icon="@drawable/setting"
+        android:title="@string/set_default_city"/>
+    <item
+        android:id="@+id/action_location"
+        android:icon="@drawable/location"
+        android:title="@string/action_location"/>
+
+</menu>
