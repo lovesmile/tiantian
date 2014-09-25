@@ -17,7 +17,9 @@ public class ToolsBroadcastReceiver extends BroadcastReceiver {
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
 		String action = intent.getAction();
-		screenShot = new ScreenShot(context);
+		if(screenShot==null){
+			screenShot = new ScreenShot(context);
+		}
 		if (TextUtils.equals(ToolsConstants.START_LIGHT_ACTION, action)) {
 			PackageManager pm = context.getPackageManager();
 			FeatureInfo[] features = pm.getSystemAvailableFeatures();

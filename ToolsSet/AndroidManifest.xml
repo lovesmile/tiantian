@@ -63,14 +63,5 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" >
         </activity>
-        <service
-            android:name=".screenshot.ScreenShotService"
-            android:enabled="true" >
-            <intent-filter>
-                <action android:name="com.tian.service.once.ScreenShotService" />
-                <action android:name="com.tian.service.more.ScreenShotService" />
-                <action android:name="com.tian.service.end.ScreenShotService" />
-            </intent-filter>
-        </service>
     </application>
 </manifest>

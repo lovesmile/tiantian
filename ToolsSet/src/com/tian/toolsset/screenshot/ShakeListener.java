@@ -12,9 +12,9 @@ import android.hardware.SensorManager;
 public class ShakeListener implements SensorEventListener
 {
     // 速度阈值，当摇晃速度达到这值后产生作用
-    private static final int SPEED_SHRESHOLD = 3000;
+    private static final int SPEED_SHRESHOLD = 3300;
     // 两次检测的时间间隔
-    private static final int UPTATE_INTERVAL_TIME = 70;
+    private static final int UPTATE_INTERVAL_TIME = 90;
     // 传感器管理器
     private SensorManager sensorManager;
     // 传感器
@@ -49,9 +49,8 @@ public class ShakeListener implements SensorEventListener
         if (sensor != null)
         {
             sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_GAME);
-            isStart = true;
         }
-
+        isStart = true;
     }
 
     // 停止检测

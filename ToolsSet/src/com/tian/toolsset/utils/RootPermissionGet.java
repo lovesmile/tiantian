@@ -19,8 +19,14 @@ public class RootPermissionGet {
 	         os.writeBytes(cmd + "\n");
 	         os.writeBytes("exit\n");
 	         os.flush();
-	         process.waitFor();
-	         isRoot = true;
+	         int exitValue = process.waitFor();  
+	         if (exitValue == 0)  
+	         {  
+	        	 isRoot = true;
+	         } else  
+	         {  
+	        	 isRoot = false;
+	         }  
 	     } catch (Exception e) {
 	    	 isRoot = false;
 	     } finally {

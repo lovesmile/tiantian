@@ -9,6 +9,7 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -19,10 +20,11 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Vibrator;
-import android.view.Gravity;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.tian.toolsset.screenshot.ShakeListener.OnShakeListener;
+import com.tian.toolsset.utils.ToastUtils;
 
 public class ScreenShot {
 	private static final String TAG = "ScreenShot";
@@ -39,7 +41,7 @@ public class ScreenShot {
 	private MyHandler handler = new MyHandler();
 	private static ArrayList<String> paths = new ArrayList<String>();
 	private long lastTime = 0;
-	private boolean isShow =false;
+	private boolean isShow = false;
 	/**
 	 * 截图控制条件：1 单张 ，2 连续
 	 */
@@ -121,37 +123,37 @@ public class ScreenShot {
 		mShakeListener.start();
 		lastTime = 0;
 		count = 0;
+		Log.d(TAG, count+"====shakeShot");
 		mShakeListener.setOnShakeListener(new OnShakeListener() {
 			@Override
 			public void onShake() {
 				long currentTime = System.currentTimeMillis();
 				mVibrator.vibrate(new long[] { 400, 100, 400, 100 }, -1);
-				if(currentTime-lastTime<2000){
-					if(isShow){
-						isShow =false;
-					}else{
-						Toast.makeText(mContext, "截图间隔时间太短，偶会忙不过来的O(∩_∩)O", Toast.LENGTH_SHORT).show();
-						isShow =true;
-					}
+				long value = currentTime - lastTime;
+				if (value < 2000) {
 					return;
+				} else {
+					shoot(action);
 				}
 				lastTime = currentTime;
-				shoot(action);
 			}
 		});
 	}
 
 	public void stopShot() {
+		count = 0;
+		Log.d(TAG, count+"====stopShot");
 		if (mShakeListener != null && mVibrator != null) {
-			count = 0;
-			mVibrator.vibrate(new long[] { 400, 100, 400, 100 }, -1);
+			mVibrator.cancel();
 			if (mShakeListener.isStart) {
 				mShakeListener.stop();
 			}
 			if (maction == 1) {
 				Toast.makeText(mContext, "停止截图，图片已保存到SDCard/ScreenImages/目录下",
 						Toast.LENGTH_SHORT).show();
+				maction = 0 ;
 			} else if (maction == 2) {
+				maction = 0 ;
 				new Thread(new Runnable() {
 
 					@Override
@@ -173,9 +175,9 @@ public class ScreenShot {
 
 					}
 				}).start();
-				Toast.makeText(mContext, "正在生成长图", Toast.LENGTH_SHORT).show();
+				Toast.makeText(mContext, "正在生成长图", Toast.LENGTH_LONG).show();
 			} else {
-				Toast.makeText(mContext, "没有开始截图", Toast.LENGTH_SHORT).show();
+				Toast.makeText(mContext, "截图没有开始", Toast.LENGTH_SHORT).show();
 				return;
 			}
 		}
@@ -186,14 +188,16 @@ public class ScreenShot {
 	 */
 	public void shoot(int action) {
 		maction = action;
-		if (count > 15) {
-			Toast.makeText(mContext, "连续截图已达15次上限", Toast.LENGTH_SHORT).show();
-			return;
-		}
 		count++;
+		Log.d(TAG, count+"====shoot");
 		if (action == 1) {
 			filename = SAVE_PATH + System.currentTimeMillis() + ".png";
 		} else if (action == 2) {
+			if (count > 15) {
+				Toast.makeText(mContext, "连续截图已达15次上限", Toast.LENGTH_SHORT)
+						.show();
+				return;
+			}
 			filename = SAVE_CACHE_PATH + System.currentTimeMillis() + ".png";
 		}
 		if (filename == null) {
@@ -225,6 +229,7 @@ public class ScreenShot {
 							outputStream.close();
 						}
 					}
+					handler.sendEmptyMessage(1);
 					process.waitFor();
 				} catch (Exception e) {
 					handler.sendEmptyMessage(0);
@@ -236,7 +241,6 @@ public class ScreenShot {
 				}
 			}
 		}).start();
-		handler.sendEmptyMessage(1);
 	}
 
 	/**
@@ -357,7 +361,9 @@ public class ScreenShot {
 				Toast.makeText(mContext, "截图失败", Toast.LENGTH_SHORT).show();
 				break;
 			case 1:
-				Toast.makeText(mContext, ""+count+"", 500).show();;
+				ToastUtils toastUtils = new ToastUtils(mContext);
+				toastUtils.show(String.valueOf(count));
+				Log.d(TAG, count+"====ToastUtils");
 				break;
 			case 2:
 				Toast.makeText(mContext, "长图已保存到SDCard/ScreenImages/目录下",

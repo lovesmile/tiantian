@@ -150,7 +150,7 @@ public final class R {
         public static final int export_contacts_title=0x7f080025;
         public static final int gv_menu=0x7f08002c;
         public static final int ibtn_right_menu=0x7f08000f;
-        public static final int item_text=0x7f080032;
+        public static final int item_text=0x7f080034;
         public static final int iv_back=0x7f08000d;
         public static final int iv_logo=0x7f08002b;
         public static final int iv_menu_icon=0x7f08002d;
@@ -171,11 +171,13 @@ public final class R {
         public static final int shot_title=0x7f080018;
         public static final int text1=0x7f08001a;
         public static final int text2=0x7f08001d;
+        public static final int toast_layout=0x7f080032;
         public static final int tv_menu_msg=0x7f08002f;
         public static final int tv_menu_title=0x7f08002e;
         public static final int tv_rv=0x7f080030;
         public static final int tv_rv2=0x7f080031;
         public static final int tv_scan_result=0x7f080011;
+        public static final int txt_no=0x7f080033;
         public static final int viewfinder_view=0x7f080023;
         public static final int wifi_title=0x7f080020;
     }
@@ -188,7 +190,8 @@ public final class R {
         public static final int main=0x7f030005;
         public static final int menu_item=0x7f030006;
         public static final int notification=0x7f030007;
-        public static final int wifi_item=0x7f030008;
+        public static final int toast_number=0x7f030008;
+        public static final int wifi_item=0x7f030009;
     }
     public static final class raw {
         public static final int beep=0x7f050000;
